@@ -1,0 +1,10 @@
+.tmp/
+.vscode/
+bower_components/
+node_modules/
+source/
+bower.json
+gulpFile.js
+package-lock.json
+package.json
+*.map
