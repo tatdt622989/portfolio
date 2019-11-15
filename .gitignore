@@ -8,3 +8,4 @@ gulpFile.js
 package-lock.json
 package.json
 *.map
+debug.log
