@@ -1,11 +1,11 @@
 "use strict";
 
 $(document).ready(function () {
-  var allPage = ['#index-nav', '.intro-aboutme-wrap'];
+  var allPage = ['#index-nav', '.intro-aboutme-wrap', '.website-wrap'];
   var thisPage = '';
   var i = 0; //抓取目前所在頁面
 
-  while (i < 2) {
+  while (i < 3) {
     if ($(allPage[i]).length > 0) {
       thisPage = allPage[i];
     }
@@ -203,6 +203,9 @@ $(document).ready(function () {
         }
       });
       break;
+
+    case '.website-wrap':
+      $('.nav-item').eq(1).css('background-color', '#e2e2e2');
   }
 });
 //# sourceMappingURL=all.js.map
