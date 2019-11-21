@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="27" height="21"><g data-name="Group 176" fill="none" stroke="#a1a1a1" stroke-linecap="round" stroke-width="3"><path data-name="Line 17" d="M1.5 1.5h24"/><path data-name="Line 18" d="M1.5 10.5h24"/><path data-name="Line 19" d="M1.5 19.5h24"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="21" viewBox="0 0 27 21">
+  <g id="Group_176" data-name="Group 176" transform="translate(-370.5 -15)">
+    <line id="Line_17" data-name="Line 17" x2="24" transform="translate(372 16.5)" fill="none" stroke="#a1a1a1" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_18" data-name="Line 18" x2="24" transform="translate(372 25.5)" fill="none" stroke="#a1a1a1" stroke-linecap="round" stroke-width="3"/>
+    <line id="Line_19" data-name="Line 19" x2="24" transform="translate(372 34.5)" fill="none" stroke="#a1a1a1" stroke-linecap="round" stroke-width="3"/>
+  </g>
+</svg>

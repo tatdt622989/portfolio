@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="398" height="732"><g data-name="Group 263" transform="translate(-1177 -518)" fill="#26b482"><circle data-name="Ellipse 56" cx="9.5" cy="9.5" r="9.5" transform="translate(1340 691)"/><circle data-name="Ellipse 84" cx="9.5" cy="9.5" r="9.5" transform="translate(1399 1188)"/><circle data-name="Ellipse 66" cx="9.5" cy="9.5" r="9.5" transform="translate(1389 518)"/><circle data-name="Ellipse 67" cx="7.5" cy="7.5" r="7.5" transform="translate(1374 667)"/><circle data-name="Ellipse 62" cx="9.5" cy="9.5" r="9.5" transform="translate(1556 804)"/><circle data-name="Ellipse 57" cx="16.5" cy="16.5" r="16.5" transform="translate(1177 854)"/><circle data-name="Ellipse 83" cx="14" cy="14" r="14" transform="translate(1448 1064)"/><circle data-name="Ellipse 58" cx="21.5" cy="21.5" r="21.5" transform="translate(1252 1207)"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="398" height="732" viewBox="0 0 398 732">
+  <g id="Group_263" data-name="Group 263" transform="translate(-1177 -518)">
+    <circle id="Ellipse_56" data-name="Ellipse 56" cx="9.5" cy="9.5" r="9.5" transform="translate(1340 691)" fill="#26b482"/>
+    <circle id="Ellipse_84" data-name="Ellipse 84" cx="9.5" cy="9.5" r="9.5" transform="translate(1399 1188)" fill="#26b482"/>
+    <circle id="Ellipse_66" data-name="Ellipse 66" cx="9.5" cy="9.5" r="9.5" transform="translate(1389 518)" fill="#26b482"/>
+    <circle id="Ellipse_67" data-name="Ellipse 67" cx="7.5" cy="7.5" r="7.5" transform="translate(1374 667)" fill="#26b482"/>
+    <circle id="Ellipse_62" data-name="Ellipse 62" cx="9.5" cy="9.5" r="9.5" transform="translate(1556 804)" fill="#26b482"/>
+    <circle id="Ellipse_57" data-name="Ellipse 57" cx="16.5" cy="16.5" r="16.5" transform="translate(1177 854)" fill="#26b482"/>
+    <circle id="Ellipse_83" data-name="Ellipse 83" cx="14" cy="14" r="14" transform="translate(1448 1064)" fill="#26b482"/>
+    <circle id="Ellipse_58" data-name="Ellipse 58" cx="21.5" cy="21.5" r="21.5" transform="translate(1252 1207)" fill="#26b482"/>
+  </g>
+</svg>
