@@ -454,7 +454,7 @@ pre {
   margin-left: auto; }
   @media (min-width: 350px) {
     .container {
-      max-width: 318px; } }
+      max-width: 324px; } }
   @media (min-width: 656px) {
     .container {
       max-width: 624px; } }
@@ -8731,7 +8731,7 @@ a.text-dark:hover, a.text-dark:focus {
       background-size: 100% 40px;
       padding-bottom: 54px; }
       .card-wrap > .container .row div img {
-        width: 302px; }
+        border-radius: 20px; }
       .card-wrap > .container .row div div {
         width: calc(100% - 16px);
         top: 20px; }
@@ -8748,8 +8748,6 @@ a.text-dark:hover, a.text-dark:focus {
   @media (min-width: 656px) {
     .card-wrap {
       background-size: 100% 60px; }
-      .card-wrap > .container .row div img {
-        width: 296px; }
       .card-wrap > .container .row div div {
         top: 14px; }
         .card-wrap > .container .row div div h3 {
@@ -8759,8 +8757,7 @@ a.text-dark:hover, a.text-dark:focus {
       background-size: 100% 90px;
       padding-bottom: 80px; }
       .card-wrap > .container .row div img {
-        width: 634px;
-        border-radius: 40px; }
+        border-radius: 30px; }
       .card-wrap > .container .row div div {
         width: calc(100% - 32px);
         top: 79px; }
@@ -8778,7 +8775,8 @@ a.text-dark:hover, a.text-dark:focus {
     height: auto;
     border-radius: 30px;
     -webkit-box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
-            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3); }
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    width: 100%; }
   .card-wrap > .container .row div div {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -8883,7 +8881,7 @@ a.text-dark:hover, a.text-dark:focus {
     padding-top: 20px;
     margin-bottom: 25px; }
     .navbar-nav .nav-item {
-      width: 318px;
+      width: 324px;
       height: 50px;
       padding-left: 8px;
       padding-right: 8px;
@@ -8933,9 +8931,9 @@ a.text-dark:hover, a.text-dark:focus {
         background-color: #e2e2e2; } }
 
 .navbar-nav .nav-item {
-  -webkit-transition: background-color 0.3s ease-in-out;
-  -o-transition: background-color 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  -o-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -8949,9 +8947,9 @@ a.text-dark:hover, a.text-dark:focus {
     cursor: pointer; }
 
 .ramdom-btn {
-  -webkit-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  -o-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out, background-color 0.2s ease-in-out, opacity 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out, background-color 0.2s ease-in-out, opacity 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, background-color 0.2s ease-in-out, opacity 0.3s ease-in-out;
   color: #34D29B;
   font-weight: bold;
   text-align: center;
@@ -9350,7 +9348,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 @media (min-width: 656px) {
   .website-wrap .row:nth-of-type(2) img, .threedcg-wrap .row:nth-of-type(2) img {
-    border-radius: 30px; }
+    border-radius: 20px; }
   .website-wrap .row:nth-of-type(2) > div > div, .threedcg-wrap .row:nth-of-type(2) > div > div {
     border-radius: 30px; }
     .website-wrap .row:nth-of-type(2) > div > div .worksBar, .threedcg-wrap .row:nth-of-type(2) > div > div .worksBar {
@@ -9365,7 +9363,7 @@ a.text-dark:hover, a.text-dark:focus {
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center;
-      border-radius: 30px 30px 0 0; }
+      border-radius: 20px 20px 0 0; }
       .website-wrap .row:nth-of-type(2) > div > div .worksBar h3, .website-wrap .row:nth-of-type(2) > div > div .worksBar h4, .threedcg-wrap .row:nth-of-type(2) > div > div .worksBar h3, .threedcg-wrap .row:nth-of-type(2) > div > div .worksBar h4 {
         font-size: 20px; }
       .website-wrap .row:nth-of-type(2) > div > div .worksBar h3, .threedcg-wrap .row:nth-of-type(2) > div > div .worksBar h3 {
@@ -9404,8 +9402,8 @@ a.text-dark:hover, a.text-dark:focus {
 .website-wrap .row:nth-of-type(2) > div > div, .threedcg-wrap .row:nth-of-type(2) > div > div {
   position: relative;
   margin-bottom: 16px;
-  -webkit-box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.16);
-          box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.16); }
+  -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2); }
   .website-wrap .row:nth-of-type(2) > div > div .worksBar, .threedcg-wrap .row:nth-of-type(2) > div > div .worksBar {
     position: absolute;
     bottom: 0;
@@ -9468,7 +9466,7 @@ a.text-dark:hover, a.text-dark:focus {
             -ms-transform: scale(1.2, 1.2);
                 transform: scale(1.2, 1.2); }
 
-@media (min-width: 656px) {
+@media (min-width: 350px) {
   .threedcg-wrap button {
     display: none; }
     .threedcg-wrap button:active {
@@ -9559,5 +9557,17 @@ a.text-dark:hover, a.text-dark:focus {
 .shadow-1 {
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16); }
+
+.expand-wrap {
+  width: 100%;
+  height: 100%;
+  background-color: #A1A1A1;
+  opacity: 0.8;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000; }
 
 /*# sourceMappingURL=all.css.map */
