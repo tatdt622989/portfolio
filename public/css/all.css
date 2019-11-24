@@ -9569,14 +9569,26 @@ a.text-dark:hover, a.text-dark:focus {
   left: 0;
   z-index: 1100; }
   @media (min-width: 350px) {
-    .expand-wrap .expand-show > div > .img-status {
+    .expand-wrap .expand-close {
+      padding-top: 12px;
+      padding-bottom: 12px; }
+    .expand-wrap .expand-show > .img-status {
       height: 52px;
       width: auto; }
     .expand-wrap .expand-item {
+      width: 308px;
       height: 86px;
-      border-radius: 20px; } }
+      border-radius: 20px; }
+      .expand-wrap .expand-item .prev-btn {
+        border-radius: 20px 0 0 20px; }
+      .expand-wrap .expand-item .next-btn {
+        border-radius: 0 20px 20px 0; } }
   @media (min-width: 656px) {
+    .expand-wrap .expand-close {
+      padding-top: 16px;
+      padding-bottom: 16px; }
     .expand-wrap .expand-item {
+      width: 608px;
       height: 120px; } }
   @media (min-width: 1364px) {
     .expand-wrap .expand-show .img-frame {
@@ -9586,71 +9598,81 @@ a.text-dark:hover, a.text-dark:focus {
         height: 72px;
         width: 428px;
         border-radius: 30px 30px 0 0; }
-    .expand-wrap .expand-show > div > .img-status {
+    .expand-wrap .expand-show > .img-status {
       display: none; }
     .expand-wrap .expand-item {
-      height: 152px;
-      border-radius: 30px; } }
-  .expand-wrap .expand-close {
-    padding-top: 28px;
-    padding-bottom: 28px; }
-    .expand-wrap .expand-close > div {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: end;
-          -ms-flex-pack: end;
-              justify-content: flex-end; }
-      .expand-wrap .expand-close > div .close-btn {
-        width: 44px;
-        height: 44px;
-        border-radius: 999em;
-        border: 0;
-        background-color: #fff;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        -webkit-transition: all 0.1s ease-in-out;
-        -o-transition: all 0.1s ease-in-out;
-        transition: all 0.1s ease-in-out;
-        padding: 0;
-        background-image: url("../images/close.svg");
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        cursor: pointer; }
-        .expand-wrap .expand-close > div .close-btn:hover {
-          opacity: 0.85; }
-        .expand-wrap .expand-close > div .close-btn:active {
-          -webkit-transform: scale(1.2, 1.2);
-              -ms-transform: scale(1.2, 1.2);
-                  transform: scale(1.2, 1.2); }
-  .expand-wrap .expand-show .img-frame {
-    background-color: #d2d2d2;
+      width: 1316px;
+      height: 140px;
+      border-radius: 30px; }
+      .expand-wrap .expand-item .prev-btn {
+        border-radius: 30px 0 0 30px; }
+      .expand-wrap .expand-item .next-btn {
+        border-radius: 0 30px 30px 0; } }
+  .expand-wrap .expand-close > div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
-            justify-content: flex-end;
+            justify-content: flex-end; }
+    .expand-wrap .expand-close > div .close-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 999em;
+      border: 0;
+      background-color: #fff;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-transition: all 0.1s ease-in-out;
+      -o-transition: all 0.1s ease-in-out;
+      transition: all 0.1s ease-in-out;
+      padding: 0;
+      background-image: url("../images/close.svg");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      cursor: pointer; }
+      .expand-wrap .expand-close > div .close-btn:hover {
+        opacity: 0.85; }
+      .expand-wrap .expand-close > div .close-btn:active {
+        -webkit-transform: scale(1.2, 1.2);
+            -ms-transform: scale(1.2, 1.2);
+                transform: scale(1.2, 1.2); }
+  .expand-wrap .expand-show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
-  .expand-wrap .expand-show .img-status {
-    background-color: #ECECEC; }
+    .expand-wrap .expand-show .img-frame {
+      background-color: #d2d2d2;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    .expand-wrap .expand-show .img-status {
+      background-color: #ECECEC; }
   .expand-wrap .expand-item {
     margin-top: 20px;
     background-color: #d2d2d2;
-    position: relative; }
+    position: absolute;
+    bottom: 32px; }
     .expand-wrap .expand-item .prev-btn, .expand-wrap .expand-item .next-btn {
       width: 95px;
       height: inherit;
@@ -9669,7 +9691,6 @@ a.text-dark:hover, a.text-dark:focus {
     .expand-wrap .expand-item .prev-btn {
       z-index: 1102;
       left: 0;
-      border-radius: 30px 0 0 30px;
       background-image: url("../images/leftArrow.svg"), -webkit-gradient(linear, left top, right top, from(#fff), color-stop(#fff), color-stop(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
       background-image: url("../images/leftArrow.svg"), -o-linear-gradient(left, #fff, #fff, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
       background-image: url("../images/leftArrow.svg"), linear-gradient(to right, #fff, #fff, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
@@ -9682,7 +9703,6 @@ a.text-dark:hover, a.text-dark:focus {
     .expand-wrap .expand-item .next-btn {
       z-index: 1102;
       right: 0;
-      border-radius: 0 30px 30px 0;
       background-image: url("../images/rightArrow.svg"), -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(#fff), to(#fff));
       background-image: url("../images/rightArrow.svg"), -o-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #fff, #fff);
       background-image: url("../images/rightArrow.svg"), linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #fff, #fff);
@@ -9693,7 +9713,7 @@ a.text-dark:hover, a.text-dark:focus {
       .expand-wrap .expand-item .next-btn:active {
         background-position: center center, 100% 0%; }
     .expand-wrap .expand-item .slide-works {
-      height: inherit;
+      height: auto;
       position: absolute;
       left: 111px;
       z-index: 1101; }
