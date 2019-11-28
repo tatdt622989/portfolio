@@ -170,7 +170,7 @@ $(document).ready(function () {
           'opacity': '0',
           'visibility': 'hidden'
         });
-      });
+      }); //取得視窗高度並換算後設置成expand視窗的高度
 
       var getHeightFn = function getHeightFn() {
         var getHeight = window.innerHeight;
@@ -180,26 +180,74 @@ $(document).ready(function () {
       getHeightFn();
       $(window).resize(getHeightFn);
 
-      var openExpandFn = function openExpandFn(e) {
-        var nodeName = e.target.nodeName;
-        var targetNum = parseInt(e.target.dataset.order);
-        var mqlLg = window.innerWidth;
-        var frameStr = '<img src="' + threeDCGLarge[targetNum].imgUrl[0] + '" alt="' + threeDCGLarge[targetNum].title + '">' + '<div class="img-status"></div>';
-        var slideStr = '';
+      var previewFn = function previewFn(num) {
+        //prevew陣列中所有內容的left數值(css)
+        var threeDCGPreviewOffset = [];
         var i = 0;
+        var mql = window.innerWidth;
+        var len = threeDCGPreview.length;
+        console.log(mql); //preview陣列中第一件的left數值(css)
 
-        while (i < threeDCGPreview.length) {
-          slideStr += '<img src="' + threeDCGPreview[i] + '" alt="previewImg">';
+        var basicOffset = 0; //每件作品在版面上的寬度
+
+        var offset = 0; //在preview版面上顯示的作品數量(實際上看的見的)
+
+        var showNum = 0;
+
+        if (mql >= 1364) {
+          basicOffset = 95;
+          offset = 222;
+        } else if (mql >= 656 && mql < 1364) {
+          basicOffset = 88;
+          offset = 104;
+        } else {
+          basicOffset = 50;
+          offset = 100;
+        }
+
+        while (i < len) {
+          threeDCGPreviewOffset.push(basicOffset - offset * i);
           ++i;
         }
 
-        console.log(threeDCGLarge);
-        console.log(nodeName);
-        console.log(targetNum);
-        $('.img-frame').html(frameStr);
-        $('.slide-works').html(slideStr);
+        if (num == 0) {
+          $('.prev-btn').css({
+            'background-image': 'url("../images/leftArrowLight.svg")'
+          });
+          $('.next-btn').css({
+            'background-image': ''
+          });
+        } else if (num >= len - showNum) {
+          $('.prev-btn').css({
+            'background-image': ''
+          });
+          $('.next-btn').css({
+            'background-image': 'url("../images/rightArrowLight.svg")'
+          });
+        } else {
+          $('.prev-btn, .next-btn').css({
+            'background-image': ''
+          });
+        }
 
-        if (mqlLg >= 1364 && nodeName == 'BUTTON' || mqlLg < 1364 && nodeName == "IMG") {
+        console.log($('.slide-works button').eq(1));
+        $('.slide-works button').eq(num).css({
+          'outline': '3px solid #7a7a7a',
+          'opacity': '1'
+        });
+        $('.slide-works').css({
+          'left': threeDCGPreviewOffset[num] + 'px'
+        });
+      }; //打開expand視窗所執行的函式
+
+
+      var openExpandFn = function openExpandFn(e) {
+        var nodeName = e.target.nodeName;
+        var targetNum = parseInt(e.target.dataset.order);
+        var mql = window.innerWidth;
+        var frameStr = '<img src="' + threeDCGLarge[targetNum].imgUrl[0] + '" alt="' + threeDCGLarge[targetNum].title + '">' + '<div class="img-status"></div>';
+
+        if (mql >= 1364 && nodeName == 'BUTTON' || mql < 1364 && nodeName == 'IMG') {
           console.log('match');
           $('.expand-wrap').css({
             'visibility': 'visible',
@@ -207,7 +255,46 @@ $(document).ready(function () {
           });
         } else {
           return;
+        } //取得large每個項目裡的第一張圖在preview中的位置
+
+
+        var lgInPreviewNum = [];
+        var i = 0;
+        var PosNum = 0;
+
+        while (i < threeDCGLarge.length) {
+          if (i == 0) {
+            lgInPreviewNum.push(0);
+          } else {
+            PosNum += 0 + threeDCGLarge[i - 1].imgUrl.length;
+            lgInPreviewNum.push(PosNum);
+          }
+
+          ++i;
         }
+
+        var slideStr = '';
+        i = 0;
+
+        while (i < threeDCGPreview.length) {
+          slideStr += "<button style='" + 'background-image:url(".' + threeDCGPreview[i] + '")' + "'></button>";
+          ++i;
+        }
+
+        $('.img-frame').html(frameStr);
+        $('.slide-works').html(slideStr);
+        previewFn(lgInPreviewNum[targetNum]);
+        $(window).resize(function () {
+          previewFn(lgInPreviewNum[targetNum]);
+        });
+        var offsetTop = $(window).scrollTop();
+        $('body').css({
+          'position': 'fixed',
+          'top': -offsetTop + 'px',
+          'width': '100%',
+          'overflow-y': 'scroll'
+        });
+        JSON.stringify(sessionStorage.setItem('targetPreviewNum', lgInPreviewNum[targetNum]));
       };
 
       var closeExpandFn = function closeExpandFn() {
@@ -215,11 +302,40 @@ $(document).ready(function () {
           'visibility': 'hidden',
           'opacity': '0'
         });
+        var str = $('body').css('top');
+        console.log(str);
+        var strLen = str.length;
+        console.log(strLen);
+        var offsetTop = parseInt(str.substring(1, strLen - 2)) || 0;
+        console.log(offsetTop);
+        $('body').css({
+          'position': '',
+          'top': '',
+          'width': '',
+          'overflow-y': ''
+        });
+        $(window).scrollTop(offsetTop);
+      };
+
+      var switchFn = function switchFn(e) {
+        //目前位於版面最左邊的作品在threeDCGPreview中的位置
+        var targetPreviewNum = JSON.parse(sessionStorage.getItem('targetPreviewNum'));
+        var currentBtn = e.target.className;
+        console.log(currentBtn);
+
+        if (currentBtn == 'prev-btn' && targetPreviewNum != 0) {
+          previewFn(targetPreviewNum - 1);
+          $('.slide-works button').eq(targetPreviewNum).css({
+            'outline': '',
+            'opacity': ''
+          });
+        }
       };
 
       $('.threeDCG-wrap .row').eq(1).click(openExpandFn);
       $('.close-btn').click(closeExpandFn);
-      console.log($('.threeDCG-wrap .row'));
+      $('.prev-btn, .next-btn').click(switchFn);
+      $('.slide-works button').click();
       break;
   }
 });
@@ -258,5 +374,5 @@ var threeDCGLarge = [{
   tools: 'Maya',
   imgUrl: ['./images/2018card-lg.jpg']
 }];
-var threeDCGPreview = ['./images/3dCh01-preview.jpg', './images/3dCh02-preview.jpg', './images/3dCh03-preview.jpg', './images/house01-preview.jpg', './images/house02-preview.jpg', './images/princess-preview.jpg', './images/beer-preview.jpg', './images/ladybird01-preview.jpg', './images/ladybird02-preview.jpg', './images/liqueur01-preview.jpg', './images/liqueur02-preview.jpg', './images/liqueur03-preview.jpg', './images/2018card-preview.jpg'];
+var threeDCGPreview = ['./images/3dCh01-preview.jpg', './images/3dCh02-preview.jpg', './images/3dCh03-preview.jpg', './images/house01-preview.jpg', './images/house02-preview.jpg', './images/princess-preview.jpg', './images/concert-preview.jpg', './images/beer-preview.jpg', './images/ladybird01-preview.jpg', './images/ladybird02-preview.jpg', './images/liqueur01-preview.jpg', './images/liqueur02-preview.jpg', './images/liqueur03-preview.jpg', './images/2018card-preview.jpg'];
 //# sourceMappingURL=all.js.map

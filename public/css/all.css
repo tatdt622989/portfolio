@@ -9586,10 +9586,17 @@ a.text-dark:hover, a.text-dark:focus {
       width: 308px;
       height: 86px;
       border-radius: 20px; }
+      .expand-wrap .expand-item .prev-btn, .expand-wrap .expand-item .next-btn {
+        width: 50px; }
       .expand-wrap .expand-item .prev-btn {
         border-radius: 20px 0 0 20px; }
       .expand-wrap .expand-item .next-btn {
-        border-radius: 0 20px 20px 0; } }
+        border-radius: 0 20px 20px 0; }
+      .expand-wrap .expand-item .slide-works button {
+        width: 92px;
+        height: 66px;
+        margin: 0 0 0 8px;
+        background-size: auto 66px; } }
   @media (min-width: 656px) {
     .expand-wrap .expand-show .img-frame img {
       width: 608px; }
@@ -9598,7 +9605,14 @@ a.text-dark:hover, a.text-dark:focus {
       padding-bottom: 16px; }
     .expand-wrap .expand-item {
       width: 608px;
-      height: 120px; } }
+      height: 120px; }
+      .expand-wrap .expand-item .prev-btn, .expand-wrap .expand-item .next-btn {
+        width: 88px; }
+      .expand-wrap .expand-item .slide-works button {
+        width: 88px;
+        height: 88px;
+        margin: 0 0 0 16px;
+        background-size: auto 88px; } }
   @media (min-width: 1364px) {
     .expand-wrap .expand-show .img-frame {
       height: auto;
@@ -9615,8 +9629,16 @@ a.text-dark:hover, a.text-dark:focus {
       width: 1316px;
       height: 140px;
       border-radius: 30px; }
+      .expand-wrap .expand-item .prev-btn, .expand-wrap .expand-item .next-btn {
+        width: 95px; }
       .expand-wrap .expand-item .prev-btn {
         border-radius: 30px 0 0 30px; }
+      .expand-wrap .expand-item .slide-works {
+        left: 95px; }
+        .expand-wrap .expand-item .slide-works button {
+          width: 206px;
+          height: 108px;
+          background-size: auto auto; }
       .expand-wrap .expand-item .next-btn {
         border-radius: 0 30px 30px 0; } }
   .expand-wrap .expand-close > div {
@@ -9659,9 +9681,8 @@ a.text-dark:hover, a.text-dark:focus {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
+    -ms-flex-line-pack: center;
+        align-content: center; }
     .expand-wrap .expand-show .img-frame {
       background-color: #d2d2d2;
       display: -webkit-box;
@@ -9678,16 +9699,24 @@ a.text-dark:hover, a.text-dark:focus {
           -ms-flex-align: center;
               align-items: center;
       overflow-x: hidden;
-      overflow-y: auto; }
+      overflow-y: auto;
+      position: relative; }
+      .expand-wrap .expand-show .img-frame .img-status {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin-right: auto;
+        margin-left: auto; }
     .expand-wrap .expand-show .img-status {
-      background-color: #ECECEC; }
+      background-color: rgba(236, 236, 236, 0.8); }
   .expand-wrap .expand-item {
     margin-top: 20px;
     background-color: #d2d2d2;
     position: absolute;
-    bottom: 32px; }
+    bottom: 32px;
+    overflow: hidden; }
     .expand-wrap .expand-item .prev-btn, .expand-wrap .expand-item .next-btn {
-      width: 95px;
       height: inherit;
       display: block;
       margin: 0;
@@ -9729,7 +9758,6 @@ a.text-dark:hover, a.text-dark:focus {
       width: auto;
       height: inherit;
       position: absolute;
-      left: 111px;
       z-index: 1101;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -9738,8 +9766,23 @@ a.text-dark:hover, a.text-dark:focus {
           flex-wrap: nowrap;
       -webkit-box-align: center;
           -ms-flex-align: center;
-              align-items: center; }
-      .expand-wrap .expand-item .slide-works img {
-        padding: 0 16px 0 16px; }
+              align-items: center;
+      -webkit-transition: left 1s ease-out;
+      -o-transition: left 1s ease-out;
+      transition: left 1s ease-out; }
+      .expand-wrap .expand-item .slide-works button {
+        border: 0;
+        overflow: hidden;
+        background-position: center center;
+        background-repeat: no-repeat;
+        padding: 0;
+        opacity: 0.65;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out; }
+        .expand-wrap .expand-item .slide-works button:focus {
+          outline: 0; }
+        .expand-wrap .expand-item .slide-works button:hover {
+          opacity: 1; }
 
 /*# sourceMappingURL=all.css.map */
